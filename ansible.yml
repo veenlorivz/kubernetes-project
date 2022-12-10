@@ -2,7 +2,6 @@
   become: true
   tasks:
     - name: Delete old Deployment and Service
-      command: 'kubectl delete -f Deployment.yml -f Service.yml'
-
+      command: 'kubectl delete -f /home/ubuntu/"{{ JOB_NAME }}"/Deployment.yml -f /home/ubuntu/"{{ JOB_NAME }}"/Service.yml'
     - name: Create new Deployment and Service
-      command: 'kubectl apply -f Deployment.yml -f Service.yml'
+      command: 'kubectl apply -f /home/ubuntu/"{{ JOB_NAME }}"/Deployment.yml -f /home/ubuntu/"{{ JOB_NAME }}"/Service.yml'
