@@ -1,0 +1,7 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Delete old Deployment and Service
+      command: 'kubectl delete -f Deployment.yml -f Service.yml'
+    - name: Create new Deployment and Service
+      command: 'kubectl apply -f Deployment.yml -f Service.yml'
