@@ -1,6 +1,8 @@
 - hosts: all
   become: true
   tasks:
+    - name: Go to working directory
+      command: cd /home/ubuntu/"{{ JOB_NAME }}"
     - name: Delete old Deployment and Service
       command: 'kubectl delete -f Deployment.yml -f Service.yml'
     - name: Create new Deployment and Service
