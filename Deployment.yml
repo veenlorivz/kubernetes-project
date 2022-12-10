@@ -17,6 +17,6 @@ spec:
       containers:
       - name: web-page
         image: veenlorivz/kubernetes-project:latest
-        imagePullPolicy: always
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
